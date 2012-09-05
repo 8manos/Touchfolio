@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
 				displayMobileMenu();
 			}
 
-			if(body.hasClass('page-template-ds-gallery-masonry-template-php')) {
+			if(body.hasClass('page-template-ds-gallery-masonry-template-php') || body.hasClass('page-template-page-lo-que-no-se-hizo-php')) {
 				$('.albums-thumbnails').masonry({ 
 					itemSelector : '.project-thumb', 
 					gutterWidth: 8,
