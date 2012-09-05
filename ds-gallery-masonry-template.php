@@ -14,7 +14,13 @@
 <div id="primary" class="site-content">
 	<div id="content" role="main">
 		<?php 
-		$gallery_cats = get_ds_option('album_cats_gallery_page');
+		if( is_front_page() ){
+			$gallery_cats = get_ds_option('album_cats_gallery_page');
+		}else{
+			$post_meta = get_post_custom();
+   			$gallery_cats = unserialize( $post_meta['dsframework-gallery'][0] );	
+		}
+		
 		if($gallery_cats) {
 			$tax_query = array(               
 		    	'relation' => 'AND',                  
